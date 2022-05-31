@@ -19,12 +19,29 @@ const dataBelanjaan = [
     kuantitas: 8,
   },
 ];
+/*
+  '- Minyak Goreng Delima x 2',
+  '- Beras Mamos x 1',
+  '- Larutan Cap Kaki Empat x 8'
+*/
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = function(data) {
+	let result = [];
+	for(let i = 0; i < data.length; i++) {
+		result.push(`- ${data[i].nama} x ${data[i].kuantitas}`)
+	}
+	return result
+}
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = function(data) {
+	let result = 0;
+	for(let i = 0; i < data.length; i++) {
+		result = result + (data.harga * data.kuantitas)
+	}
+	return result
+}
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
